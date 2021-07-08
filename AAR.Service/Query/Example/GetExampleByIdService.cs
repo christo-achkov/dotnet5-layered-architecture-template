@@ -18,6 +18,7 @@ namespace AAR.Service.Query.Example
         {
             var exampleEntity = await _exampleRepository.GetById(query.Id);
 
+            // just for quick testing purposes
             var result = exampleEntity == null ? null : new GetExampleByIdResult
             {
                 Name = exampleEntity?.Name,
