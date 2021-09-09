@@ -10,8 +10,8 @@ namespace AAR.Data.Context.AAR
         private IConfiguration _configuration { get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={_configuration["DataSource"]}");
-        // there should be no issues in .net core 3.0+
+            => options.UseSqlServer(_configuration["DataSource"]);
+
         public AARContext(IConfiguration configuration)
         {
             _configuration = configuration;
